@@ -1,21 +1,23 @@
-#Interest Calculater
-
-#!/bin/bash
-
-# simple-interest.sh: Calculates Simple Interest (I = P * R * T)
-
-# Check if three arguments (P, R, T) were provided
-if [ "$#" -ne 3 ]; then
-    echo "Usage: $0 <Principal> <Rate> <Time>"
-    exit 1
-fi
-
-P=$1 # Principal amount
-R=$2 # Annual Interest Rate (e.g., 0.05 for 5%)
-T=$3 # Time in years
-
-# Use 'bc' (basic calculator) for floating-point arithmetic
-# Formula: Interest = P * R * T
-INTEREST=$(echo "scale=2; $P * $R * $T" | bc)
-
-echo "Simple Interest: $INTEREST" 
+ #!/bin/bash
+   # This script calculates simple interest given principal,
+   # annual rate of interest and time period in years.
+   # Do not use this in production. Sample purpose only.
+   # Author: Upkar Lidder (IBM)
+   # Additional Authors:
+   # <your GitHub username>
+   # Input:
+   # p, principal amount
+   # t, time period in years
+   # r, annual rate of interest
+   # Output:
+   # simple interest = p*t*r
+   echo "Enter the principal:"
+   read p
+   echo "Enter rate of interest per year:"
+   read r
+   echo "Enter time period in years:"
+   read t
+   s=`expr $p \* $t \* $r / 100`
+   echo "The simple interest is: "
+   echo $s
+   
